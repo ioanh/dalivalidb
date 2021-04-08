@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
+import {api} from './services/freeapi.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -13,7 +15,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [api],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

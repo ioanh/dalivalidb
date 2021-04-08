@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import{weatherAPI} from './services/weatherAPImodel'
+import{weatherAPImodel} from './services/weatherAPImodel'
+import {api} from './services/freeapi.service'
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,20 @@ import{weatherAPI} from './services/weatherAPImodel'
 })
 export class AppComponent {
   title = 'dalivalidb';
-}
 
-console.log(weatherAPI);
+  constructor(private _api: api){ }
+  
+
+  LondonWeather: weatherAPImodel;
+
+  ngOnInit(){
+    this._api.getapi()
+
+    .subscribe
+    (
+      data=>{
+        this.LondonWeather = data;
+      }
+    );
+  }
+}

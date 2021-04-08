@@ -1,45 +1,45 @@
-export class weatherAPI {
+export class weatherAPImodel {
     
         coord: {
-          lon: -0.1257,
-          lat: 51.5085
+          lon: number,
+          lat: number
         };
         weather: [
           {
-            id: 803,
-            main: "Clouds",
-            description: "broken clouds",
-            icon: "04d"
+            id: number,
+            main: string,
+            description: string,
+            icon: string
           }
         ];
-        base: "stations";
+        base: string;
         main: {
-          temp: 284.19,
-          feels_like: 282.76,
-          temp_min: 283.71,
-          temp_max: 284.82,
-          pressure: 1019,
-          humidity: 54
+          temp: number,
+          feels_like: number,
+          temp_min: number,
+          temp_max: number,
+          pressure: number,
+          humidity: number
         };
-        visibility: 10000;
+        visibility: number;
         wind: {
-          speed: 5.66,
-          deg: 220
+          speed: number,
+          deg: number
         };
         clouds: {
-          all: 75
+          all: number
         };
-        dt: 1617900148;
+        dt: number;
         sys: {
-          type: 1,
-          id: 1414,
-          country: "GB",
-          sunrise: 1617859180,
-          sunset: 1617907473
+          type: number,
+          id: number,
+          country: string,
+          sunrise: number,
+          sunset: number
         };
-        timezone: 3600;
-        id: 2643743;
-        name: "London";
-        cod: 200
+        timezone: number;
+        id: number;
+        name: string;
+        cod: number
       
 }
