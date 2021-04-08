@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import{weatherAPI} from './services/weatherAPImodel'
 
 @Component({
   selector: 'app-root',
@@ -8,3 +9,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'dalivalidb';
 }
+
+console.log(weatherAPI);
