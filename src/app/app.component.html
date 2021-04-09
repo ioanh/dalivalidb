@@ -1,8 +1,15 @@
 <div class="row">
   <div class="container">
-    <div class="col-xs-12">
-      <h1>{{LondonWeather.name}}</h1>
-      <button class="btn btn-success">WTF</button>
+    <div class="col-md-6 col-md-offset-3">
+      <div class="thumbnail">
+        <img src="..." alt="...">
+        <h1>{{LondonWeather.weather[0].main}}</h1>
+        <div class="caption">
+          <h3>Feels like {{LondonWeather.main.feels_like - 273.15}}</h3>
+          <p>...</p>
+          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
