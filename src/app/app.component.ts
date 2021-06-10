@@ -16,6 +16,7 @@ export class AppComponent {
   LondonWeather: weatherAPImodel;
   currentWeather: number;
   typeOfWeather: string;
+  imagePath: string;
 
   ngOnInit(){
     this._api.getapi()
@@ -28,6 +29,8 @@ export class AppComponent {
         // TRANSFORMING THE DEGREES TO C and ROUNDING THEM 
         this.currentWeather = Math.round(this.LondonWeather.main.feels_like - 273.15);
         this.typeOfWeather = this.LondonWeather.weather[0].main
+        //ADDING THE IMAGE PATH
+        this.imagePath = `../assets/${this.typeOfWeather}.png`;
         //CW THE MODEL
         console.log(this.LondonWeather)
       }
