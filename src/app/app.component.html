@@ -3,11 +3,13 @@
     <div class="col-md-6 col-md-offset-3">
       <div class="thumbnail">
         <h1>{{cityName}}</h1>
+        <h2>{{description}}</h2>
         <img src={{imagePath}} alt="...">
         <h1>{{typeOfWeather}}</h1>
-        <h2>{{description}}</h2>
         <h1>{{currentWeather}}&#8451;</h1>
         <h2>lon: {{lon}}  lat: {{lat}}</h2>
+        <input type="text" class="form-control" placeholder="City" #cityQuery>
+        <button class="btn btn-primary" (click)="cityWasSelected(cityQuery.value)">Click to see city!</button>
       </div>
     </div>
   </div>
