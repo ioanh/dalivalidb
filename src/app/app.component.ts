@@ -15,6 +15,7 @@ export class AppComponent {
 
   LondonWeather: weatherAPImodel;
   currentWeather: number;
+  typeOfWeather: string;
 
   ngOnInit(){
     this._api.getapi()
@@ -22,9 +23,13 @@ export class AppComponent {
     .subscribe
     (
       data=>{
+        //FETCHING THE DATA 
         this.LondonWeather = data;
         // TRANSFORMING THE DEGREES TO C and ROUNDING THEM 
         this.currentWeather = Math.round(this.LondonWeather.main.feels_like - 273.15);
+        this.typeOfWeather = this.LondonWeather.weather[0].main
+        //CW THE MODEL
+        console.log(this.LondonWeather)
       }
     );
   }  
