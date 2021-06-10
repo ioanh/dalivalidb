@@ -21,6 +21,7 @@ export class AppComponent {
   lon: number;
   lat: number;
   description: string;
+  country: string;
 
   ngOnInit(){
     this._api.getapi()
@@ -79,6 +80,8 @@ export class AppComponent {
     //GETTING THE DESCRIPTION
     this.description = this.LondonWeather.weather[0].description
   
+    //GETTING THE COUNTRY
+    this.country = this.LondonWeather.sys.country
     //CW THE MODEL
     console.log(this.LondonWeather)
   }
