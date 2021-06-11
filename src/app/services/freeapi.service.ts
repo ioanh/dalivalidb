@@ -11,7 +11,7 @@ export class api {
     queryChanged = new EventEmitter<string>();
     getapi(query: string = 'Dolna%20Banya'): Observable<any>{ 
         
-        return this.httpclinet.get(`http://api.openweathermap.org/data/2.5/weather?q=${query}&appid=70c110dbd331e0f14f9cd29f78c32ff0`)
+        return this.httpclinet.get(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=70c110dbd331e0f14f9cd29f78c32ff0`)
     }
     
 }
