@@ -28,10 +28,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('dalivalidb');
   });
 
-  it('should render title', () => {
+  it('should have app weather in it', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('dalivalidb app is running!');
+    expect(compiled.querySelector('app-weather').textContent).toContain('here');
   });
 });
