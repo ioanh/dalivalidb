@@ -48,16 +48,6 @@ export class AppComponent {
     )
   }  
 
-
-
-
-
-  //GETTING THE QUERY FROM USER AND EMITTING THE DATA
-  cityWasSelected(query){
-    this._api.queryChanged.emit(query)
-  }
-
-
   updatingFrontend(){
     // TRANSFORMING THE DEGREES TO C and ROUNDING THEM 
     this.currentWeather = Math.round(this.LondonWeather.main.feels_like - 273.15);
