@@ -7,7 +7,7 @@
         <img src={{imagePath}} alt="...">
         <h1>{{typeOfWeather}}</h1>
         <h1>{{currentWeather}}&#8451;</h1>
-        <h2>lon: {{lon}}  lat: {{lat}}</h2>
+        <h2>lon:{{lon}}  lat: {{lat}}</h2>
         <input type="text" class="form-control" placeholder="Search for a city" #cityQuery>
         <button class="btn btn-primary" (click)="cityWasSelected(cityQuery.value)">Click to see city!</button>
       </div>
