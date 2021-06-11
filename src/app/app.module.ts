@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 
 import {api} from './services/freeapi.service';
 import { SearchDirective } from './search.directive';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchDirective
+    SearchDirective,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,
