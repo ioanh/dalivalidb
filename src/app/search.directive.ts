@@ -13,7 +13,7 @@ export class SearchDirective {
 
   onInputChange(){
     this.API.queryChanged.emit(this.element.nativeElement.value)
-    console.log(this.element.nativeElement.value)
+    //console.log(this.element.nativeElement.value)
   }
 
 }
