@@ -16,7 +16,7 @@ export class GetWeatherAction implements Action {
 export class GetWeatherSuccessAction implements Action {
     readonly type = weatherActionTypes.GET_WEATHER_SUCESS
 
-    constructor(private payload: weatherAPImodel[]) {}
+    constructor(private payload: weatherAPImodel) {}
 }
 
 export class GetWeatherFailureAction implements Action {
