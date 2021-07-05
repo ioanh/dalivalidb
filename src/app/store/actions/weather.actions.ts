@@ -10,19 +10,19 @@ export enum weatherActionTypes {
 export class GetWeatherAction implements Action {
     readonly type = weatherActionTypes.GET_WEATHER
 
-    constructor(private payload: string) {}
+    constructor(public payload: string) {}
 }
 
 export class GetWeatherSuccessAction implements Action {
     readonly type = weatherActionTypes.GET_WEATHER_SUCESS
 
-    constructor(private payload: weatherAPImodel) {}
+    constructor(public payload: weatherAPImodel) {}
 }
 
 export class GetWeatherFailureAction implements Action {
     readonly type = weatherActionTypes.GET_WEATHER_FAILURE
 
-    constructor(private payload: Error){}
+    constructor(public payload: Error){}
 }
 
 export type WeatherAction = GetWeatherAction | GetWeatherSuccessAction | GetWeatherFailureAction 
