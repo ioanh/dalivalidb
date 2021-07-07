@@ -13,6 +13,8 @@ import { StoreModule } from '@ngrx/store';
 import { WeatherReducer } from './store/reducers/weather.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { WeatherEffects } from './store/effects/weather.effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { WeatherEffects } from './store/effects/weather.effects';
     BrowserModule,
     HttpClientModule,
     StoreModule.forRoot({weather: WeatherReducer}),
-    EffectsModule.forRoot([WeatherEffects])
+    EffectsModule.forRoot([WeatherEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [api],
   bootstrap: [AppComponent]
