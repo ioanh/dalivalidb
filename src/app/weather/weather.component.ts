@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import{weatherAPImodel} from '../services/weatherAPImodel'
 import {api} from '../services/freeapi.service'
+import { AppState } from '../store/models/app-state.model';
+import { Store } from '@ngrx/store';
+import { GetWeatherAction } from '../store/actions/weather.actions';
 
 @Component({
   selector: 'app-weather',
@@ -9,7 +12,7 @@ import {api} from '../services/freeapi.service'
 })
 export class WeatherComponent implements OnInit {
 
-  constructor(private _api: api){ }
+  constructor(private _api: api, private store: Store<AppState>){ }
   
 
   LondonWeather: weatherAPImodel;
@@ -22,7 +25,12 @@ export class WeatherComponent implements OnInit {
   description: string;
   country: string;
 
+
+
+
   ngOnInit(){
+    this.store.dispatch(new GetWeatherAction('Sofia'))
+
     this._api.getapi()
 
     .subscribe
