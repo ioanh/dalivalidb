@@ -1,13 +1,17 @@
-<div class="row">
+  <!-- <div *ngFor="let ngrxWeather of ngRxWeather$ | async">
+    <h1>{{ngrxWeather.name}} </h1>
+  </div> -->
+
+  <div class="row">
     <div class="container">
-      <div class="col-md-6 col-md-offset-3">
+      <div *ngFor="let ngrxWeather of ngRxWeather$ | async" class="col-md-6 col-md-offset-3">
         <div class="thumbnail">
-          <h1>{{cityName}} {{country}}</h1>
-          <h2>{{description}}</h2>
-          <img src={{imagePath}} alt="...">
-          <h1>{{typeOfWeather}}</h1>
-          <h1>{{currentWeather}}&#8451;</h1>
-          <h2>lon:{{lon}}  lat: {{lat}}</h2>
+          <h1>{{ngrxWeather.name}} {{ngrxWeather.sys.country}}</h1>
+          <h2>{{ngrxWeather.weather[0].description}}</h2>
+          <img [src]="'../assets/' + ngrxWeather.weather[0].main + '.png'" alt="...">
+          <h1>{{ngrxWeather.weather[0].main}}</h1>
+          <h1>{{ngrxWeather.main.feels_like - 273.15 | number: '1.0-0'}}&#8451;</h1>
+          <h2>lon:{{ngrxWeather.coord.lon}}  lat: {{ngrxWeather.coord.lat}}</h2>
         </div>
       </div>
     </div>
