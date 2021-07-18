@@ -4,6 +4,7 @@ import {api} from '../services/freeapi.service'
 import { AppState } from '../store/models/app-state.model';
 import { Store } from '@ngrx/store';
 import { GetWeatherAction } from '../store/actions/weather.actions';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-weather',
@@ -25,11 +26,14 @@ export class WeatherComponent implements OnInit {
   description: string;
   country: string;
 
+  ngRxWeather$: Observable<weatherAPImodel[]>;
+
 
 
 
   ngOnInit(){
     this.store.dispatch(new GetWeatherAction('Sofia'))
+    this.ngRxWeather$ = this.store.select(store => store.weather.weather)
 
     this._api.getapi()
 

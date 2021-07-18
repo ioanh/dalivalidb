@@ -12,3 +12,7 @@
       </div>
     </div>
   </div>
+
+  <div *ngFor="let ngrxWeather of ngRxWeather$ | async">
+    <h1>{{ngrxWeather.name}} </h1>
+  </div>
