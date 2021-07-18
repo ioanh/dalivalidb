@@ -25,7 +25,7 @@
           <h2>{{ngrxWeather.weather[0].description}}</h2>
           <img [src]="'../assets/' + ngrxWeather.weather[0].main + '.png'" alt="...">
           <h1>{{ngrxWeather.weather[0].main}}</h1>
-          <h1>{{ngrxWeather.main.feels_like - 273.15}}&#8451;</h1>
+          <h1>{{ngrxWeather.main.feels_like - 273.15 | number: '1.0-0'}}&#8451;</h1>
           <h2>lon:{{ngrxWeather.coord.lon}}  lat: {{ngrxWeather.coord.lat}}</h2>
         </div>
       </div>
