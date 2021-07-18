@@ -15,8 +15,6 @@ export class SearchDirective {
   @HostBinding('innerHTML') query: string;
 
   onInputChange(){
-    this.API.queryChanged.emit(this.element.nativeElement.value)
-
     this.store.dispatch(new GetWeatherAction(this.element.nativeElement.value))
     //console.log(this.element.nativeElement.value)
   }
